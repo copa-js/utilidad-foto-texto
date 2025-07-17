@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Descripciones de Fotos</title>
+    <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📸 Gestor de Descripciones de Fotos</h1>
+            <div class="image-counter">
+                <span id="currentIndex">0</span> / <span id="totalImages">0</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="image-viewer">
+                <button id="prevBtn" class="nav-btn prev-btn" disabled>‹</button>
+                
+                <div class="image-container">
+                    <img id="currentImage" src="" alt="Imagen actual" />
+                    <div id="loadingSpinner" class="loading">Cargando imágenes...</div>
+                    <div id="noImages" class="no-images" style="display: none;">
+                        No se encontraron imágenes en el directorio especificado
+                    </div>
+                </div>
+                
+                <button id="nextBtn" class="nav-btn next-btn" disabled>›</button>
+            </div>
+
+            <div class="description-editor">
+                <label for="descriptionText">Descripción de la imagen:</label>
+                <textarea 
+                    id="descriptionText" 
+                    placeholder="Escribe una descripción para esta imagen..."
+                    rows="4"
+                ></textarea>
+                
+                <div class="editor-actions">
+                    <button id="saveBtn" class="save-btn" disabled>💾 Guardar Descripción</button>
+                    <div id="saveStatus" class="save-status"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Usa las flechas del teclado ← → para navegar</p>
+        </footer>
+    </div>
+
+    <script src="/public/script.js"></script>
+</body>
+</html>
